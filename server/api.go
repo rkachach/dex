@@ -176,6 +176,7 @@ func (d dexAPI) CreatePassword(ctx context.Context, req *api.CreatePasswordReq) 
 		Hash:     req.Password.Hash,
 		Username: req.Password.Username,
 		UserID:   req.Password.UserId,
+		Groups:   req.Password.Groups,
 	}
 	if err := d.s.CreatePassword(ctx, p); err != nil {
 		if err == storage.ErrAlreadyExists {
